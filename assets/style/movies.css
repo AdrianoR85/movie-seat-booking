@@ -1,0 +1,107 @@
+.container-movies {
+    display: flex;
+    align-items: center;
+    background-color: #15191C;
+    width: 130px;
+    height: 100vh;
+
+    position: absolute;
+    left: -42vw;
+    transition: .50s;
+}
+
+.movie {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;  
+}
+
+.movie__poster {
+    color: #FFFFFF;
+    text-align: center;
+    margin: 0 0 5px 5px;
+    transition: .25s;
+}
+
+.poster {
+    width: 100px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+}
+
+.movie-mobile--active {
+    left: 0;
+    transition: .50s
+}
+
+@media screen and (max-width:320px) {
+    .movie__poster {
+        margin-left: 15px;
+    }
+    .menu-text {
+        writing-mode: vertical-rl;
+        color: #FFFFFF;
+        margin-left: 15px;
+        font-size: 1.3rem;
+        padding: 10px;
+        border-radius: 0 10px 10px 0;
+        text-align:end;
+        background-color: #15191C;
+        cursor: pointer;
+    }
+}
+@media screen and (min-width:374px) {
+    .container-movies {
+        width: 160px;
+    }
+
+    .movie__poster {
+        margin-left: 20px;
+        
+    }
+
+    .menu-text {
+        writing-mode: vertical-rl;
+        color: #FFFFFF;
+        margin-left: 38px;
+        font-size: 1.3rem;
+        padding: 10px;
+        border-radius: 0 10px 10px 0;
+        text-align:end;
+        background-color: #15191C;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width:600px) {
+    .container-movies {
+        justify-content: center;
+        width: 150px;
+        height: 70vh;
+        background: rgba(0, 0, 0, 0);
+        position: static;
+        left: 0;
+    }
+
+    .menu-text {
+        display: none;
+    }
+
+    .movie {
+        flex-direction: row;
+        height: auto;
+    }
+
+    .poster {
+        width: 90px;
+        margin-top: 20px;
+        box-shadow: 0 5px 5xp black;
+    }
+
+    .movie__poster:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+        transition: .25s;
+    }
+}
+

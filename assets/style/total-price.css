@@ -1,0 +1,8 @@
+.total-price {
+    display: flex;
+    color: #fff;
+}
+
+.price {
+    margin-left: 5px;
+}
