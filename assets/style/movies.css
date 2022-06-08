@@ -28,7 +28,7 @@
 }
 
 .poster {
-    width: 100px;
+    width: 95px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
 }
 
@@ -58,8 +58,7 @@
     }
 
     .movie__poster {
-        margin-left: 20px;
-        
+        margin-left: 20px; 
     }
 
     .menu-text {

@@ -1,11 +1,11 @@
-let booking = JSON.parse(localStorage.getItem("selectedSeats")) || [];
+let banco = JSON.parse(localStorage.getItem("selectedSeats")) || [];
 
-function load() {
+function loadStorage() {
   /* Fazer uma verificação para saber qual é o filme*/
-  if (booking.length > 0) {
-    remveClass("occupied");
+  if (banco.length > 0) {
+    removeClass("occupied");
 
-    booking.forEach((book) => {
+    banco.forEach((book) => {
       if (book["name"] === movieName) {
         const dados = book;
         const seatList = dados["seat"];
@@ -20,20 +20,16 @@ function load() {
 const saveStorage = () => {
   const selectedSeat = selectedSeats();
   const seatIndex = [...selectedSeat].map((seat) => [...seats].indexOf(seat));
-  const exist = booking.find((movie) => movie.name === movieName);
+  const exist = banco.find((movie) => movie.name === movieName);
 
   if (exist) {
-    for (let i = 0; i < booking.length; i++) {
-      if (booking[i]["name"] === movieName) {
-        currantSeats = booking[i]["seat"];
-        newSeats = currantSeats.concat(seatIndex);
-        booking[i]["seat"] = newSeats.filter(function (s, i) {
-          return newSeats.indexOf(s) === i;
-        });
+    for (let i = 0; i < banco.length; i++) {
+      if (banco[i]["name"] === movieName) { 
+        banco[i]["seat"] = [...new Set([...banco[i]["seat"],...seatIndex])]
       }
     }
   } else {
-    booking.push(makeTicket(movieName, moviePrice, seatIndex));
+    banco.push(makeTicket(movieName, moviePrice, seatIndex));
   }
-  localStorage.setItem("selectedSeats", JSON.stringify(booking));
+  localStorage.setItem("selectedSeats", JSON.stringify(banco));
 };

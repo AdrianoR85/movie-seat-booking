@@ -2,11 +2,11 @@ const movies = document.querySelectorAll(".movie__poster");
 const seats = document.querySelectorAll(".row .seat:not(.occupied)");
 const screen = document.querySelector(".screen__tittle");
 const btnBuy = document.querySelector(".btn");
-const showPrice = document.querySelector('.total-price');
+const price = document.querySelector('.total-price');
 let movieName = "";
 let moviePrice = "";
 
-load();
+loadStorage();
 
 const isFree = (e) => (!e.target.contains(".occupied") ? true : false);
 const isSeat = (e) => (e.target.contains(".seat") ? true : false);
@@ -20,7 +20,7 @@ function makeTicket(movieName, moviePrice, seatIndex) {
   return ticket;
 }
 
-function remveClass(cls) {
+function removeClass(cls) {
   seats.forEach((seat) => {
     seat.classList.remove(cls);
   });
@@ -31,43 +31,42 @@ function selectedSeats() {
   return selectedSeats;
 }
 
-function updateTicket() {
+function updatePrice() {
   const selectedSeat = selectedSeats();
   const TotalPrice = moviePrice * selectedSeat.length
   
   updatePrice(TotalPrice)
 }
 
-function updatePrice(price) {
-  showPrice.textContent = `Total Price:$ ${price.toFixed(2)}`
+function showPrice(price) {
+  price.textContent = `Total Price:$ ${price.toFixed(2)}`
 }
 
 const selectSeat = seats.forEach((seat) => {
   seat.addEventListener("click", function (e) {
     if (isFree && isSeat) {
       e.target.classList.toggle("selected");
-      updateTicket();
+      updatePrice();
     }
   });
 });
 
 const selectMovie = movies.forEach((movie) => {
   movie.addEventListener("click", function (e) {
-    remveClass("selected");
+    removeClass("selected");
     movieName = movie.children[1].textContent;
     moviePrice = parseFloat(movie.children[2].textContent.slice(1));
     screen.textContent = movieName;
-    updatePrice(0)
-    load();
+    showPrice(0)
+    loadStorage();
   });
 });
 
 const buyTicket = () => {
   saveStorage();
-  updatePrice(0)
-  load();
+  showPrice(0)
+  loadStorage();
 };
 
 btnBuy.addEventListener("click", buyTicket);
-
 

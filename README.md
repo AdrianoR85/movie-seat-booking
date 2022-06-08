@@ -1,3 +1,3 @@
-# Movie seat booking
+# Movie seat banco
 
 ## 🚧 Under construction
