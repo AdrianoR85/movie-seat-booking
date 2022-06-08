@@ -3,9 +3,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 90%;
+    height: 80%;
     width: 240px;
     margin-left: 10px;    
+}
+
+.total-price {
+    font-size: 1.1rem;
 }
 
 .row {
@@ -41,12 +45,13 @@
     width: 90%;
     height: 60px;
     background-color: #FFF;
-    margin-top: 20px;
+    
 
     box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
 }
 
 .legend {
+    margin-top: -30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,6 +88,16 @@
     background: #fff;
 }
 
+.btn {
+    width: 85%;
+    border-radius: 7px;
+    padding: 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    box-shadow: 0 3px 5px rgba(255, 255, 255, 0.356)
+}
+
 @media screen and (min-width:320px) {
     .seat {
         width: 18px;
@@ -95,11 +110,12 @@
         perspective: 1000px;
         width: 290px;
         height: auto;
+        padding: 10px;
     }
 
     .screen {
         transform: rotatex(-45deg);
-        width: 100%;
+        width: 90%;
         height: 75px;
         margin-bottom: 20px;
     }
@@ -111,5 +127,13 @@
 
     .legend {
         margin-top: 20px;
+    }
+
+    .btn {
+        margin-top: 20px;
+    }
+
+    .total-price {
+        margin-bottom: 10px;
     }
 }
