@@ -35,11 +35,11 @@ function updatePrice() {
   const selectedSeat = selectedSeats();
   const TotalPrice = moviePrice * selectedSeat.length
   
-  updatePrice(TotalPrice)
+  showPrice(TotalPrice)
 }
 
-function showPrice(price) {
-  price.textContent = `Total Price:$ ${price.toFixed(2)}`
+function showPrice(newPrice) {
+  price.textContent = `Total Price:$ ${newPrice.toFixed(2)}`
 }
 
 const selectSeat = seats.forEach((seat) => {

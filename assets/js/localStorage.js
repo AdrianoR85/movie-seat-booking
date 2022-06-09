@@ -1,7 +1,6 @@
 let banco = JSON.parse(localStorage.getItem("selectedSeats")) || [];
 
 function loadStorage() {
-  /* Fazer uma verificação para saber qual é o filme*/
   if (banco.length > 0) {
     removeClass("occupied");
 
