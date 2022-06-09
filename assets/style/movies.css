@@ -8,9 +8,6 @@
     position: absolute;
     left: -38vw;
     transition: .50s;
-
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
 }
 
 .movie {
@@ -67,7 +64,6 @@
 @media screen and (min-width:410px) {
     .container-movies {
         width: 160px;
-        height: 95vh;
     }
 
     .movie__poster {
