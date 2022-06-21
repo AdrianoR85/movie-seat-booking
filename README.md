@@ -11,7 +11,6 @@ Another "project" that I developed to practice my JavaScript studies.
 
 A web page, where you selects the desired film and seat. If you adds or removes a place, the price changes. When clicking on "Book Now" the movie and the chosen seats are saved, if you reload the page the seats will show up. I used the localStorage property to store and retrieve the data in the user's browser.
 
-#7DaysOfCode
 
 Link https://adrianor85.github.io/movie-seat-booking/
 
